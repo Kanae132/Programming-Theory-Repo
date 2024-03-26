@@ -32,6 +32,7 @@
 -define:PLATFORM_ARCH_64
 -define:UNITY_64
 -define:UNITY_INCLUDE_TESTS
+-define:UNITY_ANALYTICS
 -define:ENABLE_AR
 -define:ENABLE_AUDIO
 -define:ENABLE_CACHING
@@ -120,7 +121,6 @@
 -define:TEXTCORE_FONT_ENGINE_1_5_OR_NEWER
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
--r:"Assets/Asset Store/BalloonFighters/Simple3dMapEditor/Plugins/JsonFx.Json.dll"
 -r:"D:/Softwares/Unity/UnityEditor/2022.3.21f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"D:/Softwares/Unity/UnityEditor/2022.3.21f1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"
 -r:"D:/Softwares/Unity/UnityEditor/2022.3.21f1/Editor/Data/Managed/UnityEngine/UnityEditor.DiagnosticsModule.dll"
@@ -373,45 +373,9 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -analyzer:"D:/Softwares/Unity/UnityEditor/2022.3.21f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"D:/Softwares/Unity/UnityEditor/2022.3.21f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
-"Assets/Asset Store/BalloonFighters/Scripts/Game/Character/AIControl.cs"
-"Assets/Asset Store/BalloonFighters/Scripts/Game/Character/Balloon.cs"
-"Assets/Asset Store/BalloonFighters/Scripts/Game/Character/Character.cs"
-"Assets/Asset Store/BalloonFighters/Scripts/Game/Character/CharacterControl.cs"
-"Assets/Asset Store/BalloonFighters/Scripts/Game/Character/CharacterDataEventor.cs"
-"Assets/Asset Store/BalloonFighters/Scripts/Game/Character/CharacterEffect.cs"
-"Assets/Asset Store/BalloonFighters/Scripts/Game/Character/CharacterInfo.cs"
-"Assets/Asset Store/BalloonFighters/Scripts/Game/Character/CharacterModel.cs"
-"Assets/Asset Store/BalloonFighters/Scripts/Game/Character/CharacterSetup.cs"
-"Assets/Asset Store/BalloonFighters/Scripts/Game/Character/CollisionBound.cs"
-"Assets/Asset Store/BalloonFighters/Scripts/Game/Character/CollisionChecker.cs"
-"Assets/Asset Store/BalloonFighters/Scripts/Game/Character/PlayerControl.cs"
-"Assets/Asset Store/BalloonFighters/Scripts/Game/Character/PlayerSpawn.cs"
-"Assets/Asset Store/BalloonFighters/Scripts/Game/Effect/Effect.cs"
-"Assets/Asset Store/BalloonFighters/Scripts/Game/GameInfo.cs"
-"Assets/Asset Store/BalloonFighters/Scripts/Game/Stage/Stage.cs"
-"Assets/Asset Store/BalloonFighters/Scripts/Game/Stage/StageManager.cs"
-"Assets/Asset Store/BalloonFighters/Scripts/Game/System/GameManager.cs"
-"Assets/Asset Store/BalloonFighters/Scripts/Game/System/SystemInitializer.cs"
-"Assets/Asset Store/BalloonFighters/Scripts/Game/TimeManager.cs"
-"Assets/Asset Store/BalloonFighters/Scripts/Game/UI/GoToPopup.cs"
-"Assets/Asset Store/BalloonFighters/Scripts/Game/UI/StatusUI.cs"
-"Assets/Asset Store/BalloonFighters/Scripts/Generic/Extension/DictionaryExtensionMethods.cs"
-"Assets/Asset Store/BalloonFighters/Scripts/Generic/Extension/Extension.cs"
-"Assets/Asset Store/BalloonFighters/Scripts/Generic/Extension/ObjectExtension.cs"
-"Assets/Asset Store/BalloonFighters/Scripts/Generic/FPS.cs"
-"Assets/Asset Store/BalloonFighters/Scripts/Generic/GameConstants.cs"
-"Assets/Asset Store/BalloonFighters/Scripts/Generic/GameDefine.cs"
-"Assets/Asset Store/BalloonFighters/Scripts/Generic/LayerMap.cs"
-"Assets/Asset Store/BalloonFighters/Scripts/Generic/Loader/ResourceLoader.cs"
-"Assets/Asset Store/BalloonFighters/Scripts/Generic/Singleton.cs"
-"Assets/Asset Store/BalloonFighters/Scripts/Generic/TagMap.cs"
-"Assets/Asset Store/BalloonFighters/Simple3dMapEditor/Script/Map/MapLoader.cs"
-"Assets/Asset Store/BalloonFighters/Simple3dMapEditor/Script/Map/MapObject.cs"
-"Assets/Asset Store/BalloonFighters/Simple3dMapEditor/Script/Map/Node.cs"
-"Assets/Asset Store/BalloonFighters/Simple3dMapEditor/Script/Util/ButtonAttribute.cs"
-"Assets/Asset Store/BalloonFighters/Simple3dMapEditor/Script/Util/Extension.cs"
-"Assets/Asset Store/BalloonFighters/Simple3dMapEditor/Script/Util/MapObjectClear.cs"
-"Assets/Scripts/Title Manager.cs"
+"Assets/Scripts/DataManager.cs"
+"Assets/Scripts/GameManager.cs"
+"Assets/Scripts/UIManager.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark02.cs"
