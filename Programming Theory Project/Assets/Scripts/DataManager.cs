@@ -8,6 +8,8 @@ public class DataManager : MonoBehaviour
     public static DataManager Instance { get; private set; }
 
     public string playerName;
+
+    
    
     void Awake()
     {
