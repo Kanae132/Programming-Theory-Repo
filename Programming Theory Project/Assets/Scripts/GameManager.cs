@@ -9,13 +9,14 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI playerNameText;
+    public TextMeshProUGUI score;
     public Button backToMenuBtn;
     public Button resumeBtn;
-
     public GameObject bulletPrefab;
     private Queue<GameObject> bullets = new Queue<GameObject>();
 
     private bool isPause = false;
+    [SerializeField] private float point = 0;
 
     void Start()
     {
@@ -25,6 +26,14 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         PauseAndResume();
+        ScoreUpdate(0);
+
+    }
+
+    public void ScoreUpdate(float pointToAdd)
+    {
+        point += pointToAdd;
+        score.text = "Score: " + point;
     }
 
     private void PauseAndResume()
@@ -45,7 +54,6 @@ public class GameManager : MonoBehaviour
             backToMenuBtn.gameObject.SetActive(false);
             resumeBtn.gameObject.SetActive(false);
         }
-
     }
 
     private void BackToMenu()
@@ -62,12 +70,15 @@ public class GameManager : MonoBehaviour
         resumeBtn.gameObject.SetActive(false);
     }
 
-//object pooling
+
+
+    //object pooling
 
     //Them dan
     public void AddBullet(int count)
     {
-        for(int i=0; i<count; i++){
+        for (int i = 0; i < count; i++)
+        {
             GameObject newBullet = Instantiate(bulletPrefab);
             newBullet.SetActive(false);
             bullets.Enqueue(newBullet);
@@ -77,10 +88,11 @@ public class GameManager : MonoBehaviour
     //neu so luong dan = 0, them 1 dan va lay 1 vien dan trong hang doi
     public GameObject GetBullet()
     {
-        if(bullets.Count==0){
+        if (bullets.Count == 0)
+        {
             AddBullet(10);
         }
-        
+
         return bullets.Dequeue();
     }
 
@@ -90,8 +102,4 @@ public class GameManager : MonoBehaviour
         bullet.SetActive(false);
         bullets.Enqueue(bullet);
     }
-
-//
-
-
 }

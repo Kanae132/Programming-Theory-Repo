@@ -5,18 +5,49 @@ using UnityEngine;
 public class PowerUpBalloon : Balloon, IMovable
 {
 
-    [SerializeField]private Vector3 direction;
-    private float speed = 5f;
-     
-    public override void Move(){
-        int randomDirection = Random.Range(0,2);
-        if(randomDirection == 0){
-            direction = Vector3.left;
-        }else{
-            direction = Vector3.right;
+    [SerializeField] private float speed = 10f;
+
+    public override void Move()
+    {
+        transform.position += new Vector3(0, -speed * Time.deltaTime, 0);
+    }
+
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.CompareTag("Bullet") && enemyType == "Bomb")
+        {
+            GameObject[] balloons = GameObject.FindGameObjectsWithTag("Balloon");
+            foreach (GameObject balloon in balloons)
+            {
+                Balloon balloonComp = GetComponent<Balloon>();
+                Bullet bulletComp = col.gameObject.GetComponent<Bullet>();
+                gameManager.ScoreUpdate(balloonComp.Point);
+
+                ParticleSystem tempPar = Instantiate(bulletComp.enePar, balloon.transform.position, Quaternion.identity);
+                tempPar.Play();
+                Destroy(tempPar.gameObject, tempPar.main.duration);
+                Destroy(balloon);
+            }
+            Destroy(this.gameObject);
         }
 
-        transform.position += direction * speed * Time.deltaTime;
+        if (col.gameObject.CompareTag("Bullet") && enemyType == "MultiShoot")
+        {
+            CanonController canonController = GameObject.FindObjectOfType<CanonController>();
+            if (canonController != null)
+            {
+                canonController.isMultiShoot = true;
+            }
+            Destroy(this.gameObject);
+        }
+
+
+
+        else if (col.gameObject.CompareTag("Barrier") || col.gameObject.CompareTag("Bullet"))
+        {
+            Destroy(this.gameObject);
+        }
     }
-   
 }
+
+

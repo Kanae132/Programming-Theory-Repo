@@ -6,6 +6,8 @@ public class CanonController : MonoBehaviour
 {
     public float rotationSpeed = 10f;
     public GameManager gameManager;
+    public bool isMultiShoot = false;
+    private float multiShootTimer = 0f;
 
     void Start()
     {
@@ -16,6 +18,16 @@ public class CanonController : MonoBehaviour
     {
         Rotate();
         Shoot();
+
+        if (isMultiShoot)
+        {
+            multiShootTimer += Time.deltaTime;
+            if (multiShootTimer > 5f)
+            {
+                isMultiShoot = false;
+                multiShootTimer = 0f;
+            }
+        }
     }
 
     void Rotate()
@@ -34,6 +46,17 @@ public class CanonController : MonoBehaviour
             newBullet.transform.position = transform.position;
             newBullet.transform.rotation = transform.rotation;
             newBullet.SetActive(true);
+
+            if (isMultiShoot)
+            {
+                for (int i = 0; i < 2; i++)
+                {
+                    GameObject extraBullet = gameManager.GetBullet();
+                    extraBullet.transform.position = transform.position;
+                    extraBullet.transform.rotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z + (i + 1) * 10);
+                    extraBullet.SetActive(true);
+                }
+            }
         }
     }
 }
